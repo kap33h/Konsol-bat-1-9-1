@@ -144,14 +144,16 @@ if %errorlevel% == 2 (
     goto no
 )
 :yes
+cd C:\Konsol.bat
 start SHORTCUT.bat
-powershell -Command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('If setup didn't work try downloading all the files manualy from my github page')"
 goto end
 
 :no
 goto end
 
 :end
+powershell -Command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Done')"
+powershell -Command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('If setup didn't work try downloading all the files manualy from my github page')"
 echo ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 echo.
 echo               Done!
